@@ -1,6 +1,7 @@
 const User = require('../models/User.model');
 const bcrypt = require('bcryptjs');
 const getImageFileType = require('../utils/getImageFileType');
+const fs = require('fs');
 
 exports.register = async (req, res) => {
     try {
@@ -10,6 +11,7 @@ exports.register = async (req, res) => {
         if (login && typeof login === 'string' && password && typeof password === 'string' && req.file && ['image/png', 'image/jpeg', 'image/gif'].includes(fileType)) {
             const userWithLogin = await User.findOne({ login });
             if (userWithLogin) {
+                fs.unlinkSync(`./public/uploads/${req.file.filename}`);
                 return res.status(409).send({ message: 'User with this login already exists' });
             }
             const user = await User.create({ login, password: await bcrypt.hash(password, 10), avatar: req.file.filename });
