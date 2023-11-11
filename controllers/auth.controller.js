@@ -46,5 +46,14 @@ exports.login = async (req, res) => {
 }
 
 exports.getUser = async (req, res) => {
-    res.send('Yeah! I\'m logged')
+    res.send({ message: 'Yeah! I\'m logged' })
+}
+
+exports.logout = async (req, res) => {
+    try {
+        req.session.destroy();
+        res.send({ message: 'Yeah! I\'m logged out' })
+    } catch (err) {
+        res.status(500).send({ message: err.message });
+    }
 }
