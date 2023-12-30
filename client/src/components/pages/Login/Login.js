@@ -3,9 +3,9 @@ import Form from 'react-bootstrap/Form';
 import { useState } from 'react';
 import { API_URL } from '../../../config';
 import Alert from 'react-bootstrap/Alert';
-import Spinner from 'react-bootstrap/Spinner';
 import { useDispatch } from 'react-redux';
 import { logIn } from '../../../redux/usersRedux';
+import Spinner from '../../common/Spinner/Spinner';
 
 const Login = () => {
   const [login, setLogin] = useState('');
@@ -68,9 +68,7 @@ const Login = () => {
         )}
 
         {status === "loading" && (
-          <Spinner animation='border' role='status' className='block mx-auto'>
-            <span className="visually-hidden">Loading...</span>
-          </Spinner>
+          <Spinner />
         )}
 
         <Form.Group className='mb-3' controlId='formLogin'>
