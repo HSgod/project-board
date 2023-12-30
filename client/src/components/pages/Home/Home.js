@@ -7,7 +7,7 @@ const Home = props => {
             <div className="d-flex justify-content-between">
             <h1>All ads</h1>
             <Link key={props.id} to={"/ads/add"}>
-                <Button variant="outline-info">Add advert</Button>
+                <Button variant="outline-info">Add ad</Button>
             </Link>
             </div>
         </div>

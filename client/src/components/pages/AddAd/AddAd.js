@@ -1,8 +1,6 @@
 const AddAd = () => {
     return (
-      <div>
-        <p className="text-center" >AddAd</p>
-      </div>
+      <div>AddAd</div>
     );
 };
 

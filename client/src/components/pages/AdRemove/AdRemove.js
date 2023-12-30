@@ -1,8 +1,6 @@
 const AdRemove = () => {
     return (
-      <div>
-        <p className="text-center" >AdRemove</p>
-      </div>
+      <div>AdRemove</div>
     );
 };
 

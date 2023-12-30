@@ -1,8 +1,6 @@
 const AdEdit = () => {
     return (
-      <div>
-        <p className="text-center" >AdEdit</p>
-      </div>
+      <div>AdEdit</div>
     );
 };
 

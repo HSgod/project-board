@@ -10,7 +10,6 @@ import AdRemove from './components/pages/AdRemove/AdRemove';
 import Search from './components/pages/Search/Search';
 import Login from './components/pages/Login/Login';
 import Register from './components/pages/Register/Register';
-import Logout from './components/pages/Logout/Logout';
 import NotFound from './components/pages/NotFound/NotFound';
 
 function App() {
@@ -27,7 +26,6 @@ function App() {
           <Route path="/search/searchPhrase" element={<Search />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/logout" element={<Logout />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
