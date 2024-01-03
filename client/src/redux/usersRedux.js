@@ -1,3 +1,5 @@
+export const getAllUsers = ({ users }) => users;
+
 // actions
 const createActionName = actionName => `app/ads/${actionName}`;
 

@@ -6,12 +6,14 @@ import Alert from 'react-bootstrap/Alert';
 import { useDispatch } from 'react-redux';
 import { logIn } from '../../../redux/usersRedux';
 import Spinner from '../../common/Spinner/Spinner';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
   const [status, setStatus] = useState(null);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -21,6 +23,7 @@ const Login = () => {
       headers: {
         'Content-Type': 'application/json'
       },
+      credentials: 'include',
       body: JSON.stringify({ login, password })
     }
 
@@ -30,6 +33,7 @@ const Login = () => {
         if(res.status === 200) {
           setStatus('success');
           dispatch(logIn({ login }));
+          navigate('/')
         } else if(res.status === 400) {
           setStatus('clientError');
         } else {
