@@ -101,7 +101,7 @@ const AdForm = props => {
           </Form.Group>
 
           <Form.Group className="mb-4">
-            <Form.Label>Content of the ad</Form.Label>
+            <Form.Label>Content</Form.Label>
             <ReactQuill as="textarea" value={content} onChange={setContent} />
           </Form.Group>
 
@@ -111,7 +111,7 @@ const AdForm = props => {
           </Form.Group>
 
           <Form.Group className="mb-4">
-            <Form.Label>Published date</Form.Label>
+            <Form.Label>Date: </Form.Label>
             <DatePicker selected={publishDate} onChange={(date) => setPublishDate(date)} />
           </Form.Group>
 
